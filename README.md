@@ -1,9 +1,12 @@
 # StockWatcher
 
 ## Search the ticker and get the results
+<img width="1075" alt="Screen Shot 2022-08-16 at 6 51 07 PM" src="https://user-images.githubusercontent.com/57668160/184998789-d2d6bd28-8fd3-4dfd-a2d3-b63c0b1adebc.png">
 
-<img width="1074" alt="Screen Shot 2022-08-15 at 4 26 13 PM" src="https://user-images.githubusercontent.com/57668160/184712611-7d7e7e59-0f8a-4226-8aec-56d181b113b1.png">
+## You can select the time span you wish
+<img width="1070" alt="Screen Shot 2022-08-16 at 6 51 16 PM" src="https://user-images.githubusercontent.com/57668160/184998886-f91bcfc4-a8d0-484c-9147-1e5551dfac75.png">
 
 ## Search Bar auto replacement
 > To make the auto replacement work you need to place tickers.json under NSHomeDirectory
-<img width="1083" alt="Screen Shot 2022-08-15 at 4 26 02 PM" src="https://user-images.githubusercontent.com/57668160/184713107-9d82deac-5fd2-4cb2-a3f8-176f6443d734.png">
+<img width="1073" alt="Screen Shot 2022-08-16 at 6 51 58 PM" src="https://user-images.githubusercontent.com/57668160/184998809-cdaeca3e-d5ed-4738-9100-362b0b75575b.png">
+
