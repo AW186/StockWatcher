@@ -125,8 +125,6 @@ extension ViewController {
         tabs.frame.origin.x = view.bounds.midX + 175
         tabs.frame.size.width = 225
         tabs.frame.size.height = 30
-//        tabs.wantsLayer = true
-//        tabs.layer?.backgroundColor = NSColor.blue.cgColor
     }
 }
 

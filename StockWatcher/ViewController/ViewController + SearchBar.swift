@@ -139,7 +139,7 @@ extension ViewController: SearchBarDelegate {
     func clickColor() -> NSColor {
         return NSColor.darkGray
     }
-    
+
 }
 
 extension ViewController: SearchBarDataSource {
