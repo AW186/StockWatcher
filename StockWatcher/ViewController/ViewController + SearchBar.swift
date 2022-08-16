@@ -140,7 +140,6 @@ extension ViewController: SearchBarDelegate {
         return NSColor.darkGray
     }
     
-    
 }
 
 extension ViewController: SearchBarDataSource {
