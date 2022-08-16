@@ -63,6 +63,9 @@ class SearchListView: NSView {
         self.addTrackingArea(trackingArea)
     }
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if self.window == nil {
+            return
+        }
         if (ObserveObject.obj.mouseDown && hover >= 0) {
             chooseBlk(data[hover].0)
         }

@@ -25,7 +25,6 @@ extension ViewController: SearchBarDelegate {
             let y = priceHistory[i]["o"] as! CGFloat
             let x = (priceHistory[i]["t"] as! TimeInterval) / 1000
             self.graphData[i] = CGPoint.init(x: x, y: y)
-            print(UnitConvertion.timeToString(time: x, format: "YYYY-MM-dd"))
             min = y < min ? y : min
             max = y > max ? y : max
         }
