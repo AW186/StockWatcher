@@ -33,9 +33,13 @@ extension ViewController: SearchBarDelegate {
         self.domain = ((priceHistory[0]["t"] as! CGFloat) / 1000, (priceHistory[priceHistory.count-1]["t"] as! CGFloat) / 1000)
     }
     private func updatePricesGraph(key: String) {
-        let start = UnitConvertion.fiveYearsAgo(format: "YYYY-MM-dd")
+        updatePricesGraph(key: key, time: 5 * 365 * 24 * 3600, interval: "day")
+    }
+    
+    func updatePricesGraph(key: String, time: TimeInterval, interval: String) {
+        let start = UnitConvertion.timeFromNow(format: "YYYY-MM-dd", time: -time)
         let end = UnitConvertion.timeToString(time: NSDate().timeIntervalSince1970, format: "YYYY-MM-dd")
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.polygon.io/v2/aggs/ticker/\(key)/range/1/day/\(start)/\(end)?adjusted=true&sort=asc&limit=50000&apiKey=rew9uH5wJOVt5PIDtpnDWzm92zye9_aX")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api.polygon.io/v2/aggs/ticker/\(key)/range/1/\(interval)/\(start)/\(end)?adjusted=true&sort=asc&limit=50000&apiKey=rew9uH5wJOVt5PIDtpnDWzm92zye9_aX")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -116,7 +120,7 @@ extension ViewController: SearchBarDelegate {
         if key.isEmpty {
             return
         }
-        updatePricesGraph(key: key)
+        updatePricesGraph(key: key, time: timePeriodTabs.period.rawValue, interval: timePeriodTabs.getInterval())
         updateTickerDetail(key: key)
     }
     

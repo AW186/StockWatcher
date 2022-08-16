@@ -7,6 +7,10 @@
 
 import Foundation
 class UnitConvertion {
+    static func timeFromNow(format: String, time: TimeInterval) -> String {
+        let now = NSDate().timeIntervalSince1970 + time
+        return timeToString(time: now, format: format)
+    }
     static func fiveYearsAgo(format: String) -> String {
         let now = NSDate().timeIntervalSince1970 - 5 * 365 * 24 * 3600
         return timeToString(time: now, format: format)

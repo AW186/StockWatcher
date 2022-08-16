@@ -12,7 +12,11 @@ class ViewController: NSViewController, NSWindowDelegate {
     var graphData: [CGPoint] = [CGPoint(x: 0.0, y: 0.0)]
     var range: (CGFloat, CGFloat) = (0, 1)
     var domain: (CGFloat, CGFloat) = (0, 1)
-    
+    lazy var timePeriodTabs: TimePeriodTabs = {
+        let view = TimePeriodTabs.init(frame: NSRect())
+        view.delegate = self
+        return view
+    }()
     lazy var graph: XYChart = {
         let view = XYChart.init()
         view.delegate = self
@@ -44,6 +48,7 @@ class ViewController: NSViewController, NSWindowDelegate {
         self.view.addSubview(tabs)
         self.view.addSubview(dictionaryView)
         self.view.addSubview(searchBar)
+        self.view.addSubview(timePeriodTabs)
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear() {
@@ -59,6 +64,7 @@ class ViewController: NSViewController, NSWindowDelegate {
         layoutSearchBar()
         layoutTabs()
         layoutDictionaryView()
+        layoutTimePeriodTabs()
     }
     func updateGraph() {
         graph.removeFromSuperview()
@@ -102,6 +108,11 @@ extension ViewController {
         graph.frame = view.bounds
         graph.frame.size.height -= 100
         graph.frame.size.width -= 400
+        graph.frame.origin.y += 40
+    }
+    func layoutTimePeriodTabs() {
+        let graphCenter = (self.view.bounds.width - 400) / 2
+        timePeriodTabs.frame = NSRect.init(x: graphCenter - 450 / 2, y: 10, width: 450, height: 30)
     }
     func layoutSearchBar() {
         searchBar.frame.origin.y = view.bounds.height - 75

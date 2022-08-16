@@ -38,6 +38,9 @@
 		C63C9FE128996614003A1DC0 /* Exchanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C9FE028996614003A1DC0 /* Exchanges.swift */; };
 		C63C9FE328996CC0003A1DC0 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C9FE228996CC0003A1DC0 /* JSONParser.swift */; };
 		C63C9FE528997658003A1DC0 /* Companies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C9FE428997658003A1DC0 /* Companies.swift */; };
+		C6F348D528AC361D00059343 /* TimePeriodTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F348D428AC361D00059343 /* TimePeriodTabs.swift */; };
+		C6F348D728AC385900059343 /* TimePeriodTabsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F348D628AC385900059343 /* TimePeriodTabsDelegate.swift */; };
+		C6F348D928AC4D3300059343 /* ViewController + TimePeriodTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F348D828AC4D3300059343 /* ViewController + TimePeriodTabs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		C63C9FE028996614003A1DC0 /* Exchanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchanges.swift; sourceTree = "<group>"; };
 		C63C9FE228996CC0003A1DC0 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		C63C9FE428997658003A1DC0 /* Companies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Companies.swift; sourceTree = "<group>"; };
+		C6F348D428AC361D00059343 /* TimePeriodTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePeriodTabs.swift; sourceTree = "<group>"; };
+		C6F348D628AC385900059343 /* TimePeriodTabsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePeriodTabsDelegate.swift; sourceTree = "<group>"; };
+		C6F348D828AC4D3300059343 /* ViewController + TimePeriodTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + TimePeriodTabs.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,8 @@
 		C60DEEB128AACC5C00938748 /* Technicals */ = {
 			isa = PBXGroup;
 			children = (
+				C6F348D428AC361D00059343 /* TimePeriodTabs.swift */,
+				C6F348D628AC385900059343 /* TimePeriodTabsDelegate.swift */,
 			);
 			path = Technicals;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 				C60DEEAD28A44BA200938748 /* ViewController + TabView.swift */,
 				C60DEE9A289C296C00938748 /* ObserveObject.swift */,
 				C63C9FC828957E9D003A1DC0 /* ViewController + SearchBar.swift */,
+				C6F348D828AC4D3300059343 /* ViewController + TimePeriodTabs.swift */,
 				C63C9FB72890C14E003A1DC0 /* ViewController + XYGraph.swift */,
 			);
 			path = ViewController;
@@ -401,6 +410,8 @@
 				C60DEE9B289C296C00938748 /* ObserveObject.swift in Sources */,
 				C63C9FC12894750D003A1DC0 /* SearchBarDataSource.swift in Sources */,
 				C63C9FB5287F1DA8003A1DC0 /* CGPoint + Scale.swift in Sources */,
+				C6F348D928AC4D3300059343 /* ViewController + TimePeriodTabs.swift in Sources */,
+				C6F348D728AC385900059343 /* TimePeriodTabsDelegate.swift in Sources */,
 				C63C9F82287E3AB1003A1DC0 /* ViewController.swift in Sources */,
 				C60DEEA4289EF88300938748 /* LoadingView.swift in Sources */,
 				C63C9FC3289476C6003A1DC0 /* SeachIcon.swift in Sources */,
@@ -419,6 +430,7 @@
 				C63C9FB0287E55D9003A1DC0 /* XYChartDataSource.swift in Sources */,
 				C60DEEB028A4698200938748 /* FinancialAPI.swift in Sources */,
 				C63C9FBF289474D8003A1DC0 /* SearchBarDelegate.swift in Sources */,
+				C6F348D528AC361D00059343 /* TimePeriodTabs.swift in Sources */,
 				C63C9FB82890C14E003A1DC0 /* ViewController + XYGraph.swift in Sources */,
 				C63C9F80287E3AB1003A1DC0 /* AppDelegate.swift in Sources */,
 			);

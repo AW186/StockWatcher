@@ -12,6 +12,7 @@ class XYChart: NSView {
     var delegate: XYChartDelegate?
     var dataSource: XYChartDataSource?
     private var padding: CGFloat = 55
+    private var bottomGap: CGFloat = 30
     private var horizontalSeperation = 5
     private var verticalSeperation = 5
     private var domain: (CGFloat, CGFloat) = (0, 1)
@@ -21,7 +22,7 @@ class XYChart: NSView {
     private lazy var graph: XYGraph  = {
         var frame = self.bounds
         frame.origin.x += padding
-        frame.origin.y += padding
+        frame.origin.y += bottomGap
         frame.size.width -= 2 * padding
         frame.size.height -= 2 * padding
         let view =
@@ -103,7 +104,7 @@ extension XYChart {
     private func layoutGraph() {
         var frame = self.bounds
         frame.origin.x += padding
-        frame.origin.y += padding
+        frame.origin.y += bottomGap
         frame.size.width -= 2 * padding
         frame.size.height -= 2 * padding
         graph.frame = frame
@@ -122,14 +123,14 @@ extension XYChart {
             xLabels[i].sizeToFit()
             xLabels[i].frame.origin = CGPoint.init(x: padding - xLabels[i].frame.width / 2 + CGFloat(i) * space, y: 0)
             
-            xLabels[i].frame.size.height = padding
+            xLabels[i].frame.size.height = bottomGap
         }
     }
     private func layoutYAxis() {
         let space = graph.frame.height / CGFloat(verticalSeperation)
         let increment = (range.1 - range.0) / CGFloat(verticalSeperation)
         for i in 0...verticalSeperation {
-            yLabels[i].frame.origin = CGPoint.init(x: 0, y: padding + CGFloat(i) * space)
+            yLabels[i].frame.origin = CGPoint.init(x: 0, y: bottomGap + CGFloat(i) * space)
             yLabels[i].frame.size.width = padding
             yLabels[i].sizeToFit()
         }
