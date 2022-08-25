@@ -11,5 +11,5 @@ import AppKit
 protocol XYChartDataSource {
     func getXYData() -> [([CGPoint], NSColor)]
     func getXYData(by set: Int)
-    
+    func getXAxisLabels() -> [String]
 }

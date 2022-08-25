@@ -66,11 +66,16 @@ extension XYChart {
             arg.removeFromSuperview()
         }
         xLabels.removeAll()
+        guard let labelText = dataSource?.getXAxisLabels() else {
+            return
+        }
+        self.horizontalSeperation = labelText.count - 1
+        if (horizontalSeperation < 0) {
+            return
+        }
         let space = graph.frame.width / CGFloat(horizontalSeperation)
-        let increment = (domain.1 - domain.0) / CGFloat(horizontalSeperation)
         for i in 0...horizontalSeperation {
-            let val = CGFloat(i) * increment + domain.0
-            let text = delegate?.axisXFormat(val: val) ?? String(Double(val))
+            let text = labelText[i]
             let label = NSTextField.init(labelWithString: text)
             label.font = NSFont.systemFont(ofSize: 12)
             label.alignment = .center
@@ -117,6 +122,9 @@ extension XYChart {
     private func layoutXAxis() {
         let space = graph.frame.width / CGFloat(horizontalSeperation)
         let increment = (domain.1 - domain.0) / CGFloat(horizontalSeperation)
+        if (horizontalSeperation < 0) {
+            return
+        }
         for i in 0...horizontalSeperation {
             
             xLabels[i].font = NSFont.systemFont(ofSize: 12)

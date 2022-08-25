@@ -115,7 +115,7 @@ extension TimePeriodTabs {
     }
     func getInterval() -> String {
         switch status {
-        case .fiveyrs, .oneyr, .threemonths:
+        case .fiveyrs, .oneyr:
             return "day"
         case .day:
             return "minutes"
