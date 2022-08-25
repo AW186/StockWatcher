@@ -21,15 +21,16 @@ extension ViewController: SearchBarDelegate {
         var max: CGFloat = 0
         var min: CGFloat = priceHistory[0]["o"] as! CGFloat
         self.graphData = [CGPoint].init(repeating: CGPoint(), count: priceHistory.count)
+        self.timeData = [TimeInterval].init(repeating: 0, count: priceHistory.count)
         let count = priceHistory.count
         for i in 0..<count {
             let y = priceHistory[i]["o"] as! CGFloat
             let x = CGFloat(i)
             self.graphData[i] = CGPoint.init(x: x, y: y)
+            self.timeData[i] = (priceHistory[i]["t"] as! TimeInterval) / 1000
             min = y < min ? y : min
             max = y > max ? y : max
         }
-        self.startTime = (priceHistory[0]["t"] as! TimeInterval) / 1000
         self.range = (min, max)
         self.domain = (0, CGFloat(count))
     }

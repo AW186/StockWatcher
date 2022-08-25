@@ -11,6 +11,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     var ticker: String = ""
     var startTime: TimeInterval = 0
     var graphData: [CGPoint] = [CGPoint(x: 0.0, y: 0.0)]
+    var timeData: [TimeInterval] = [0]
     var range: (CGFloat, CGFloat) = (0, 1)
     var domain: (CGFloat, CGFloat) = (0, 1)
     lazy var timePeriodTabs: TimePeriodTabs = {

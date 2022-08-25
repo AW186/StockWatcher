@@ -13,13 +13,21 @@ extension ViewController: XYChartDataSource {
         var res = [String]()
         switch(self.timePeriodTabs.period) {
         case .week:
+            var record: TimeInterval = 0;
+            for i in 0..<timeData.count {
+                if timeData[i] - record > 3601 {
+                    res.append(UnitConvertion.timeToString(time: timeData[i], format: "MM-dd"))
+                }
+                record = timeData[i]
+            }
             break
         case .day:
             break
         default:
             let end = NSDate().timeIntervalSince1970
+            let incre = timeData.count / 6
             for i in 0..<6 {
-                let time = (end-self.startTime) * (TimeInterval(i) / 6.0) + self.startTime
+                let time = timeData[i * incre]
                 res.append(UnitConvertion.timeToString(time: time, format: "YYYY-MM-dd"))
             }
             break
